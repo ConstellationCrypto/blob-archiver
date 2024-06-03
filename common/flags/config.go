@@ -24,7 +24,6 @@ type S3Config struct {
 	Endpoint string
 	UseHttps bool
 	Bucket   string
-	Path     string
 
 	S3CredentialType S3CredentialType
 	AccessKey        string
@@ -107,7 +106,6 @@ func readS3Config(ctx *cli.Context) S3Config {
 		SecretAccessKey:  ctx.String(S3SecretAccessKeyFlagName),
 		UseHttps:         ctx.Bool(S3EndpointHttpsFlagName),
 		Bucket:           ctx.String(S3BucketFlagName),
-		Path:             ctx.String(S3PathFlagName),
 		S3CredentialType: toS3CredentialType(ctx.String(S3CredentialTypeFlagName)),
 		Compress:         ctx.Bool(S3CompressFlagName),
 	}
